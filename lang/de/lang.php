@@ -20,3 +20,6 @@ $lang['include']		= 'Einschließen';
 $lang['exclude']		= 'Ausschließen';
 $lang['use_and']		= 'Logisches AND verwenden';
 $lang['no_tags']		= 'Keine Tags gefunden';
+
+$lang['unknown_user']  = 'Unbekannter Benutzer';
+$lang['unknown_group'] = 'Unbekante Gruppe';
