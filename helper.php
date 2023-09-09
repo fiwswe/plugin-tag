@@ -552,24 +552,22 @@ class helper_plugin_tag extends DokuWiki_Plugin {
         $user = $INPUT->server->str('REMOTE_USER');
 
         //only available for logged-in users
-        if(isset($USERINFO)) {
-            if(is_array($USERINFO) && isset($USERINFO['name'])) {
-                $name  = cleanID($USERINFO['name']);
-            }
-            else {
-                $name = '';
+        if (isset($USERINFO)) {
+            $name = $USERINFO['name'] ?? null;
+            if (isset($name)) {
+                $name = cleanID($name);
             }
             // FIXME or delete, is unreliable because just first entry of group array is used, regardless the order of groups..
-            if(is_array($USERINFO) && isset($USERINFO['grps'])) {
-                $group = cleanID($USERINFO['grps'][0]);
-            }
-            else {
-                $group = '';
+            $group = $USERINFO['grps'][0] ?? null;
+            if (isset($group)) {
+                $group = cleanID($group);
             }
         } else {
-            $name  = '';
+            $name = '';
             $group = '';
         }
+        $name ??= $this->getLang('unknown_user');
+        $group ??= $this->getLang('unknown_group');
 
         $replace = [
                 '@USER@'  => cleanID($user),
