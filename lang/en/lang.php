@@ -21,3 +21,6 @@ $lang['include']		= 'Include';
 $lang['exclude']		= 'Exclude';
 $lang['use_and']		= 'Use logic AND';
 $lang['no_tags']		= 'No tags found';
+
+$lang['unknown_user']  = 'Unknown user';
+$lang['unknown_group'] = 'Unknown group';
